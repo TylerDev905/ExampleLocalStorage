@@ -1,0 +1,424 @@
+<!doctype html>
+<!-- I William Taylor-Holubeshen, 000305063 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else. -->
+<!-- Logo background source http://www.psdgraphics.com/file/colorful-triangles-background.jpg -->
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+				        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+			#FormInterests {
+				background-color:#777;
+				padding:5px;
+			}
+			.main {
+				margin:2%;
+				margin-left:15%;
+				margin-right:15%;
+			}
+			#StatusMessage{
+				margin:2%;
+				margin-left:15%;
+				margin-right:15%;
+			}
+			blockquote{
+				border-left:none;
+				margin:0;
+				background-color:#ccc;
+				padding:1px;
+				padding-top:10px;
+				padding-left:10%;
+				padding-right:10%;
+			}
+			blockquote:hover {
+			padding:1px;
+				padding-top:10px;
+				padding-left:10%;
+				padding-right:10%;
+			}
+			
+			.textbox {
+				width:60%;
+				border-top-left-radius:0;
+				display:inline;
+			}
+
+			.label {
+				border-bottom-left-radius:0;
+				border-bottom-right-radius:0;
+			}
+			.check {
+				margin-left:25px;
+				padding:10px;
+			}
+			input[type=checkbox]{
+				margin-left:25px;
+			}
+			
+			input[type=radio]{
+				margin-left:25px;
+			}
+			select {
+				width:60%;
+			}
+			.buttonWell {
+				margin-left:15%;
+				margin-right:15%;
+			}
+			.center {
+				margin-left:auto;
+				margin-right:0;
+				text-align:center;
+			}
+			.panel{
+				padding:0;
+				background-color:#1F3E50;
+				color:#EEE;
+			}
+			.panel-title {
+				font-size:20px;
+			}
+			.panel-body {
+				padding:0;
+			}
+			h2 {
+				position:relative;
+				top:-10px;
+				text-align:center;
+			}
+			.well {
+				border-top-left-radius:0;
+				background-color:#EEEEEE;
+			}
+			.jumbotron {
+				background-image: url("img/Logo.jpg");
+				padding:50px;
+				color:#eee;
+			}
+			#footerbtns {
+				margin-bottom:0;
+			}
+			select {
+				color:black;
+			}
+			footer {
+				font-size:16px;
+			}
+			table {
+				width:100%;
+				color:black;
+				margin-bottom:10px;
+			}
+        </style>
+		
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+		
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Comp10043: Lab4: Forms and Local Storage</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+	
+	 <div class="jumbotron">
+      <div class="container">
+        <h1><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> William Taylor-Holubeshen</h1>
+        <p>This lab demonstrates the use of Twitter Bootstrap and using local storage to store form variables.</p>
+      </div>
+    </div>
+	
+	<h2><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Network Status <span class="label label-default" id="Network">Online</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-hdd" aria-hidden="true"></span> Local Storage <span class="label label-default" id="Localstorage">Supported</span></h2>
+		
+	<form id="FormInterests" action="https://csu.mohawkcollege.ca/tooltime/echo.php" Method="Post">
+	
+	<div id="StatusMessage">
+		
+	</div>
+	
+	<div class="main panel" id="AjaxContainer" style="display:none;">
+
+		<div class="panel-heading">
+			<h1 class="panel-title"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span><strong> Ajax Data</strong></h1>
+		</div>
+		
+		<blockquote>
+		<div class="panel-body">
+			<div id="AjaxData"></div>
+		</div>
+		</blockquote>
+		
+	</div>
+	
+	<div class="main panel">
+	<div class="panel-heading">
+		<h1 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><strong> Personal Interest Form</strong></h1>
+	</div>
+	<div class="panel-body">
+		
+		
+	<blockquote>
+	<span class="label label-warning"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Form / Local Storage Options</span>	
+	<div class="well">
+		<div class="center">
+				
+		<div class="btn-group-vertical" role="group" aria-label="...">
+			
+				<button type="button" id="Test" class="btn-sm btn-info" data-toggle="tooltip" title="Will populate the form with test data.">Use test form data</button>
+
+			
+				<button type="button" id="Save" class="btn-sm btn-success" data-toggle="tooltip" title="Will save the current data in the form inputs to the local storage.">Save form to local storage</button>
+			
+			
+				<button type="button" id="Clear" class="btn-sm btn-warning" data-toggle="tooltip" title="Will clear all data from local storage and form inputs.">Clear local storage and form</button>
+			
+			
+				<button type="button" id="Load" class="btn-sm btn-danger" data-toggle="tooltip" title="Will populate the form with data from the local storage.">Load form values from loacal storage</button>
+			
+		</div>
+		</div>
+	</div>
+	</blockquote>
+		
+		<blockquote>
+			<span class="label label-warning">Full Name</span>
+			<div class="form-group">
+				<input type="text" name="fullname" id="Fullname" class="form-control textbox" placeholder="First Name and Last Name" data-toggle="tooltip" title="Please type your first and last name." required> 
+				<span class="label label-success" style="display:none;" id="RequiredSuccess"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Required attribute supported</span>
+				<span class="label label-danger" style="display:none;" id="RequiredFail"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Required attribute not supported</span>
+			</div>
+		</blockquote>
+		
+		<blockquote>
+			<span class="label label-warning">Date of Birth</span>
+			<div class="form-group">
+				<input type="date" name="date" id="Date" class="form-control textbox" placeholder="Date of Birth (mm/dd/yyyy)" data-toggle="tooltip" title="Please select your birthday using the calender." required> 
+				<span class="label label-success" style="display:none;" id="DateSuccess"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Date type supported</span>
+				<span class="label label-danger" style="display:none;" id="DateFail"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Date type not supported</span>
+			</div>
+		</blockquote>
+		
+		<blockquote>
+			<span class="label label-warning">Email</span>
+			<div class="form-group">
+				<input type="email" name="email" id="Email" class="form-control textbox" placeholder="E-mail example@email.com" data-toggle="tooltip" title="Please type a valid email address." required> 
+				<span class="label label-success" style="display:none;" id="EmailSuccess"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Email type supported</span>
+				<span class="label label-danger" style="display:none;" id="EmailFail"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Email type not supported</span>
+			</div>
+		</blockquote>
+		
+		<blockquote>
+			<span class="label label-warning">Age</span>
+			<div class="form-group">
+				<input type="number" name="age" id="Age" class="form-control textbox" placeholder="Your Age (18-90)" data-toggle="tooltip" title="Please type an age between the range (18-90)." min=18 max=90 required> 
+				<span class="label label-success" style="display:none;" id="NumberSuccess"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Number type supported</span>
+				<span class="label label-danger" style="display:none;" id="NumberFail"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Number type not supported</span>
+			</div>
+		</blockquote>
+		
+		<blockquote>
+			<span class="label label-warning">Cdn Postal Code</span>
+			<div class="form-group">
+				<input type="text" name="postal" id="Postal" class="form-control textbox" placeholder="Cdn Postal Code" data-toggle="tooltip" title="Please type your current postal code." pattern="([\w|\d]{3})[ |-]{0,1}([\w|\d]{3})" required> 
+				<span class="label label-success" style="display:none;" id="PatternSuccess"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Pattern attribute supported</span>
+				<span class="label label-danger" style="display:none;" id="PatternFail"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Pattern attribute not supported</span> 				
+			</div>
+		</blockquote>
+		
+		<blockquote>
+			<div class="form-group">
+				<span class="label label-warning">Interests</span>
+				<div class="well">
+					<span class="label label-default check">Music<input type="checkbox" class="checkInput" id="Music" name="interest[music]" > </span> 
+					<span class="label label-default check">Software<input type="checkbox" class="checkInput" id="Software" name="interest[software]"/> </span> 
+					<span class="label label-default check">Hardware<input type="checkbox" class="checkInput" id="Hardware" name="interest[hardware]"/></span> 
+				</div>
+			</div>
+		</blockquote>
+		
+		<blockquote>
+			<div class="form-group">
+				<span class="label label-warning">Gender</span>
+				<div class="well">
+					<span class="label label-default check">Male<input type="radio" class="checkInput" name="gender" id="Male" value="male" required> </span> 
+					<span class="label label-default check">Female<input type="radio" class="checkInput" name="gender" id="Female" value="female" required> </span> 
+				</div>
+			</div>
+		</blockquote>
+		
+		<blockquote>
+			<div class="form-group">
+				<span class="label label-warning">Province</span>
+				<div class="well">
+					<div class="center">
+					<select size="4" name="province[]" id="Province"  multiple required>
+						<option value="" selected id="default">---Select A Province---</option>
+						<option value="Nunavut">Nunavut</option>
+						<option value="Quebec">Quebec</option>
+						<option value="Northwest Territories">Northwest Territories</option>
+						<option value="Ontario" >Ontario</option>
+						<option value="British Columbia">British Columbia</option>
+						<option value="Alberta">Alberta</option>
+						<option value="Saskatchewan">Saskatchewan</option>
+						<option value="Manitoba">Manitoba</option>
+						<option value="9">Yukon</option>
+						<option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+						<option value="New Brunswick">New Brunswick</option>
+						<option value="Nova Scotia">Nova Scotia</option>
+						<option value="Prince Edward Island">Prince Edward Island</option>
+					</select>
+					</div>
+				</div>
+			</div>
+		</blockquote>
+	</div>
+	
+
+	<div class="well" id="footerbtns">
+		<div class="center">
+
+		<div class="btn-group btn-group" role="group" aria-label="...">
+			<div class="btn-group" role="group">
+				
+				<input type="Submit" class="btn btn-default" id="Submit">
+			</div>
+			<div class="btn-group" role="group">
+				<a href="" class="btn btn-default">Reload</a>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	</form>
+		
+    </div>
+	  <hr>
+
+      <footer>
+        <p class="center"><strong>Comp10043: Lab4: Forms and Local Storage - William Taylor-Holubeshen</strong></p>
+      </footer>
+	  
+	  
+    </div> 
+	
+		<script src="js/vendor/jquery-1.11.2.min.js"></script>
+	
+		<script type="text/javascript" src="js/plugins.js"></script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+		
+		
+		<script>
+	
+		var json = {};
+		var test = '{"fullname":"John Doe","date":"1990-08-27","email":"JohnDoe@mohawkcollege.ca","age":"24","postal":"L9M 1B8","interest":{"music":"on","software":"on"},"gender":"male","province":"4"}';
+		
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();
+			navigator.onLine ? $("#Network").html("Online!") : $("#Network").html("Offline");
+			Modernizr.localstorage ? $("#Localstorage").html("Supported!") : $("#Localstorage").html("Not Supported");
+			Modernizr.input.required ? $("#RequiredSuccess").css("display","inline") : $("#RequiredFail").css("display","inline");
+			Modernizr.inputtypes.date ? $("#DateSuccess").css("display","inline") : $("#DateFail").css("display","inline");
+			Modernizr.inputtypes.date ? $("#EmailSuccess").css("display","inline") : $("#EmailFail").css("display","inline");
+			Modernizr.inputtypes.date ? $("#NumberSuccess").css("display","inline") : $("#NumberFail").css("display","inline");
+			Modernizr.inputtypes.date ? $("#PatternSuccess").css("display","inline") : $("#PatternFail").css("display","inline");
+		});
+		
+		$("#Test").click(function(){
+			json = JSON.parse(test);
+			$("#FormInterests").populate(json);
+			$("#default").prop("selected", false);
+			$("#StatusMessage").html('<div class="alert alert-info" role="alert"><strong>Heads Up!</strong> The form data has loaded test data.</div>');
+			setTimeout(function(){StatusMessageDelay();}, 3000);
+		});
+		
+		$("#Save").click(function(){
+			json = $("#FormInterests").serializeJSON();
+			localStorage.setItem("Interests", JSON.stringify(json));
+			$("#StatusMessage").html('<div class="alert alert-info" role="alert"><strong>Heads Up!</strong> Form Values have been saved to Local Storage.</div>');
+			setTimeout(function(){StatusMessageDelay();}, 3000);
+		});
+		
+		$("#Load").click(function(){
+			json = JSON.parse(localStorage.getItem("Interests"));
+			$("#FormInterests").populate(json);
+			$("#default").prop("selected", false);
+			$("#StatusMessage").html('<div class="alert alert-info" role="alert"><strong>Heads Up!</strong> Form has been loaded with values retrieved from Local Storage.</div>');
+			setTimeout(function(){StatusMessageDelay();}, 3000);
+		});
+		
+		$("#Clear").click(function(){
+			$("#FormInterests")[0].reset();
+			localStorage.removeItem("Interests");
+			$("#StatusMessage").html('<div class="alert alert-info" role="alert"><strong>Heads Up!</strong> Local Storage is destroyed and form has been cleared.</div>');
+			setTimeout(function(){StatusMessageDelay();}, 3000);
+		});
+		
+		$("#FormInterests").on('submit', function(e){
+			if(navigator.onLine){
+				$.post( "https://csu.mohawkcollege.ca/tooltime/echo.php", $("#FormInterests").serializeJSON(), function(data, status){
+					if(status){
+						$("#AjaxData").html(data);
+						$("#AjaxContainer").fadeIn();
+					}
+				});
+			}
+			else{
+				$("#StatusMessage").html('<div class="alert alert-warning" role="alert"><strong>Warning!</strong>The network is currently offline, form data will be saved to local storage.</div>');
+				json = $("#FormInterests").serializeJSON();
+				localStorage.setItem("Interests", JSON.stringify(json));
+				setTimeout(function(){StatusMessageDelay();}, 3000);
+			}
+			e.preventDefault();
+		});
+		
+		function StatusMessageDelay(){
+			$("#StatusMessage").html("");
+		}
+		
+		</script>
+		
+    </body>
+</html>
