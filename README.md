@@ -1,7 +1,9 @@
 # ExampleLocalStorage
 
 ### Local Storage Example
-Demonstrates
+This is a lab from school.
+
+Demonstrates the use of
 ```
 1. Twitter Bootstrap
 2. Local Storage
